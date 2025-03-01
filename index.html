@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pastry for 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Miss+Fajardose&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically */
+            background-color: aliceblue;
+        }
+
+        h1{
+            font-family: "Miss Fajardose", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size:130px;
+            text-align: center;
+            line-height: 90px;
+            color: #bb2823;
+        }
+
+        h2{
+            font-family: "EB Garamond", serif;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 100;
+            line-height: 20px;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            column-gap: 100px;
+            align-items: center;
+        }
+        
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 20px;
+            padding: 10px;
+            }
+
+        /* STYLE FOR THE INPUT FIELD */
+        #charInput1 {
+            font-family: "EB Garamond", serif;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 100;
+            line-height: 10px;
+            width: 70px;
+            height: 50px;
+            justify-items: center;
+            border-radius: 10px;
+    
+        }
+
+        #charInput2 {
+            font-family: "EB Garamond", serif;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 100;
+            line-height: 10px;
+            width: 70px;
+            height: 50px;
+            justify-items: center;
+            border-radius: 10px;
+
+        }
+        
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* STYLE FOR THE SUBMIT BUTTON */
+        #submitButton {
+            align-items: center;
+            width: 150px;
+            text-align: center;
+            font-family: "Miss Fajardose", serif;
+            font-size: 50px;
+            font-weight: 400;
+            font-style: normal;
+            text-justify: center;
+            background-color: #bb2823;
+            border: none;
+            border-radius: 10px;
+            color: #eae7dd;
+        }
+
+        #submitButton:hover{
+            transform:scale(1.1);
+        }
+
+        /* STYLE FOR THE IMAGE */
+        #displayedImage {
+            display: none; /* This line is mandatory */
+            width: 200px;
+            position: relative;
+        }
+
+        .container3 {
+        position: relative;
+        width: fit-content; 
+        }
+
+        .background-image {
+        display: block;
+        width: 100%; /* Ensures the background image scales properly */
+        }
+
+        .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        #displayedImage {
+        width: 200px; /* Adjust based on your needs */
+        height: auto;
+        margin-right: 130px;
+    }
+    #displayedImage:hover {
+        transform:scale(1.1);
+    }
+
+    /* for movile */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 60px; 
+        line-height: 40px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .container {
+        flex-direction: column; 
+        row-gap: 20px;
+        column-gap: 0px;
+    }
+
+    .container2 {
+        flex-direction: column;
+        row-gap: 10px;
+        column-gap: 0px;
+    }
+
+    #charInput1, #charInput2 {
+        width: 50px; 
+        height: 40px;
+    }
+
+    #submitButton {
+        font-size: 30px; 
+        width: 120px;
+    }
+
+    #displayedImage {
+        width: 150px; 
+        margin-right: 80px; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+        line-height: 30px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    .container2 {
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    #charInput1, #charInput2 {
+        width: 45px;
+        height: 35px;
+    }
+
+    #submitButton {
+        font-size: 25px;
+        width: 100px;
+    }
+
+    #displayedImage {
+        width: 120px;
+    }
+    }
+
+</style>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="container1">
+            <h1>Pastry for 2</h1>
+        <h2>enter your initials & share a snack together!</h2>
+        
+        <div class = "container2">
+                <!-- INPUT FIELD FOR 1 CHARACTER -->
+            <input type="text" id="charInput1" maxlength="1">
+            <input type="text" id="charInput2" maxlength="1">
+        </div>
+    
+        <!-- BUTTON TO DISPLAY IMAGE -->
+        <div class="button">
+            <button onclick="displayImage()" id="submitButton">Enter</button>
+        </div>
+        </div>
+    
+    
+        <div class="container3">
+            <div class="overlay">
+                <!-- IMAGE TO DISPLAY -->
+                <img id="displayedImage" src="images/overlay.png" alt="Displayed Image">
+            </div>
+            <img class="background-image" src="images/base.png" alt="Base Image">
+        </div>
+
+    </div>
+
+    <!-- Image Display Script Below -->
+    <script>
+
+        function displayImage() {
+            let imgElement = document.getElementById("displayedImage");
+
+            //Letter
+            const input1_letter = document.getElementById("charInput1").value.toUpperCase();
+            const input2_letter = document.getElementById("charInput2").value.toUpperCase();
+            
+            //Number
+            const input1_number = input1_letter.charCodeAt(0); //Converts the letter to a number (https://www.ascii-code.com); For instance, 'A' is 65 in ASCII
+            const input2_number = input2_letter.charCodeAt(0); //Converts the letter to a number (https://www.ascii-code.com); For instance, 'A' is 65 in ASCII
+
+        if (!input1_letter.match(/[A-Z]/) || !input2_letter.match(/[A-Z]/)) {
+        alert("(╥﹏╥) please enter valid letters!");
+        return;
+        }
+
+        const sum = input1_number + input2_number; // Total ASCII value sum
+
+        const thresholds = [
+        { limit: 130, image: "images/a.png" },
+        { limit: 132, image: "images/b.png" },
+        { limit: 134, image: "images/c.png" },
+        { limit: 136, image: "images/d.png" },
+        { limit: 138, image: "images/e.png" },
+        { limit: 140, image: "images/f.png" },
+        { limit: 142, image: "images/g.png" },
+        { limit: 144, image: "images/h.png" },
+        { limit: 146, image: "images/i.png" },
+        { limit: 148, image: "images/j.png" },
+        { limit: 150, image: "images/k.png" },
+        { limit: 152, image: "images/l.png" },
+        { limit: 154, image: "images/m.png" },
+        { limit: 156, image: "images/n.png" },
+        { limit: 158, image: "images/o.png" },
+        { limit: 160, image: "images/p.png" },
+        { limit: 162, image: "images/q.png" },
+        { limit: 164, image: "images/r.png" },
+        { limit: 166, image: "images/s.png" },
+        { limit: 168, image: "images/t.png" },
+        { limit: 170, image: "images/u.png" },
+        { limit: 172, image: "images/v.png" },
+        { limit: 174, image: "images/w.png" },
+        { limit: 176, image: "images/x.png" },
+        { limit: 178, image: "images/y.png" },
+        { limit: 180, image: "images/z.png" }
+    ];
+
+    let selectedImage = "";
+    for (let i = 0; i < thresholds.length; i++) {
+        if (sum <= thresholds[i].limit) {
+            selectedImage = thresholds[i].image;
+            break; // Stop checking once a match is found
+        }
+    }
+
+    if (selectedImage) {
+        imgElement.src = selectedImage;
+        imgElement.style.display = "block";
+    } else {
+        imgElement.style.display = "none";
+    }
+}
+
+    
+            //HINTS
+
+            //HINT 2: Assign an image based numerical values
+           // if(input1_number == 67 && input2_number == 68) { //If input1_number is 67 (C) AND input2_number is 68 (D), then show this image
+           // imgElement.src = "images/a.png"
+          // imgElement.style.display = "block";
+         //   } 
+
+
+            //Remember to use if else statements to capture error conditions
+
+    </script>
+
+
+</body>
+</html>
