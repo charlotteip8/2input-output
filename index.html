@@ -24,8 +24,9 @@
             font-style: normal;
             font-size:130px;
             text-align: center;
-            line-height: 90px;
+            line-height: 150px;
             color: #bb2823;
+            margin-bottom: -5px;
         }
 
         h2{
@@ -144,11 +145,11 @@
         transform:scale(1.1);
     }
 
-    /* for movile */
+    /* for mobile */
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 60px; 
-        line-height: 40px;
+        font-size: 130px; 
+        line-height: 150px;
     }
 
     h2 {
@@ -181,16 +182,19 @@
         width: 150px; 
         margin-right: 80px; 
     }
+    .background-image {
+        margin-top: -90px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     h1 {
-        font-size: 40px;
-        line-height: 30px;
+        font-size: 90px;
+        line-height: 100px;
     }
 
     h2 {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .container {
@@ -199,24 +203,28 @@
     }
 
     .container2 {
-        flex-direction: column;
-        row-gap: 5px;
+        flex-direction: row;
+        column-gap: 20px;
     }
 
     #charInput1, #charInput2 {
-        width: 45px;
-        height: 35px;
+        width: 60px;
+        height: 50px;
     }
 
     #submitButton {
-        font-size: 25px;
-        width: 100px;
+        font-size: 50px;
+        width: 120px;
     }
 
     #displayedImage {
         width: 120px;
     }
+
+    .background-image {
+        margin-top: -90px;
     }
+}
 
 </style>
 
@@ -225,7 +233,7 @@
 
     <div class="container">
         <div class="container1">
-            <h1>Pastry for 2</h1>
+            <h1>Pastry For 2</h1>
         <h2>enter your first initials & share a snack together!</h2>
         
         <div class = "container2">
